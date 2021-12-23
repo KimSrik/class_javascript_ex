@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gender, #result{
+            display: block;
+            width: 600px;
+            padding: 10px;
+            margin: 0 auto;
+            
+        }
+        input[value="처리"]{
+            display: block;
+            margin: 20px auto;
+            
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="gender" placeholder="성별을 입력하세요.(예:'남', '여')">
+    <input type="button" value="처리" onclick="
+        let _gender = document.getElementById('gender');
+        let _result = document.getElementById('result');
+        // _result.value= _gender.value == '남' ? '장가' : _gender.value == '여' ? '시집' : '다시 확인';
+        if(_gender.value == '남')
+        _result.value = '장가';
+        else if(_gender.value == '남자')
+        _result.value = '장가';
+        else if(_gender.value == '여')
+        _result.value = '시집';
+        else if(_gender.value == '여자')
+        _result.value = '시집';
+        else
+        _result.value = '양식을 확인해서 다시 처리하십시오.'
+    ">
+    <hr>
+    <input type="text" id="result" placeholder="이곳에 결과가 나옵니다.">
+</body>
+</html>

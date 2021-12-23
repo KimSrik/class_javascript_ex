@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+    <style>
+        .wrap{
+            width: 300px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 50px;
+            gap: 12px;
+        }
+        input{
+            grid-column: 1/5;
+            font-size: 24px;
+        }
+        .button{
+            height: 50px;
+        }
+
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <input type="text" id="result" placeholder="0">
+        <button class="button">+</button>
+        <button class="button">-</button>
+        <button class="button">*</button>
+        <button class="button">/</button>
+        <button class="button">9</button>
+        <button class="button">8</button>
+        <button class="button">7</button>
+        <button class="button">6</button>
+        <button class="button" id="number5" onclick="let number5 = document.querySelector('#number5').innerHTML;
+        // console.log(number5);
+        let result = document.querySelector('#result');
+        result.value += number5;
+        ">5</button>
+        <button class="button">4</button>
+        <button class="button">3</button>
+        <button class="button">2</button>
+        <button class="button">1</button>
+        <button class="button">0</button>
+        <button class="button">.</button>
+        <button class="button">=</button>
+        
+        
+    </div>
+</body>
+</html>
