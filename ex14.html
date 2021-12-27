@@ -27,6 +27,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- 배열의 첫번째는 0번째인 인덱스에 저장된다. -->
         <div class="array array01">01</div>
         <div class="array array02">02</div>
         <div class="array array03">03</div>
@@ -44,7 +45,9 @@
         let array = document.querySelectorAll('.array');
         console.log(typeof array);
         // array.style.backgroundColor = '#f00';
-        array[0].style.backgroundColor = '#f00';
+
+        array[4].style.display = 'none';
+        array[8].style.backgroundColor = '#f00';
     </script>
 </body>
 </html>

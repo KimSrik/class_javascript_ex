@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix::after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .wrap{
+            overflow: hidden;
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+        .slider{
+            width: 640px;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .slides{
+            position: relative;
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+        }
+        .slide{
+            position: absolute;
+
+            top: 0;
+
+            transition: 0.3s;
+        }
+        .slide.active{
+            /* left: 0; */
+        }
+        .slide01{
+            left: 0px;
+        }
+        .slide02{
+            left: 100%;
+        }
+        .slide03{
+            left: 200%;
+        }
+        .slide04{
+            left: 300%;
+        }
+        .slide05{
+            left: 400%;
+        }
+        
+        .navigation{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform:translateY(-50%);
+
+            display: flex;
+            justify-content: space-between;
+        }
+        .navigation div{
+            margin: 0 20px;
+            font-weight: 900;
+            font-size: 24px;
+            text-shadow: 1px 1px 1px #fff;
+            cursor: pointer;
+        }
+
+
+        .pager{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+
+        }
+        .pager span{
+            width: 20px;
+            height: 20px;
+            
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: #000;
+
+            text-indent: -99999px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pager span.active{
+            background-color: #f00;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>slider</h1>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide slide01 active"><img src="./images/img01.jpg" alt="slide01"></div>
+                <div class="slide slide02"><img src="./images/img02.jpg" alt="slide02"></div>
+                <div class="slide slide03"><img src="./images/img03.jpg" alt="slide03"></div>
+                <div class="slide slide04"><img src="./images/img04.png" alt="slide04"></div>
+                <div class="slide slide05"><img src="./images/img05.jpg" alt="slide05"></div>
+            </div>
+            <div class="navigation">
+                <div class="prev" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+
+                    if(indexNum <= 0){                  
+                        // _slide[0].classList.remove('active');
+                        // _slide[4].classList.add('active');
+
+                        // _span[0].classList.remove('active');
+                        // _span[4].classList.add('active');
+                        indexNum = 5;
+
+                        _slide[(indexNum--) % 5].classList.remove('active');
+                        _slide[(indexNum) % 5].classList.add('active');
+
+                        _span[(++indexNum) % 5].classList.remove('active');
+                        _span[(--indexNum) % 5].classList.add('active');
+                        
+                    }
+                    else{
+                        _slide[(indexNum--) % 5].classList.remove('active');
+                        _slide[(indexNum) % 5].classList.add('active');
+
+                        _span[(++indexNum) % 5].classList.remove('active');
+                        _span[(--indexNum) % 5].classList.add('active');
+                    }
+                
+                ">이전</div>
+
+                <div class="next" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    
+                    // _slide[(indexNum++) % 5].classList.remove('active');
+                    // _slide[indexNum % 5].classList.add('active');
+
+                    _span[(--indexNum) % 5].classList.remove('active');
+                    _span[(++indexNum) % 5].classList.add('active');    
+                    
+                    let cnt = 0;
+                    while(cnt <= 4){
+                        _slide[cnt].style.left = _slide[cnt].style.left - '100%';
+                    }
+
+
+
+                ">다음</div>
+            </div>
+            <div class="pager">
+                <span class="active" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    let cnt = 0;
+                    while(cnt<5){
+                        _span[cnt].classList.remove('active');
+                        _slide[cnt].classList.remove('active');
+                        cnt++;
+                    }
+                    _span[0].classList.add('active');
+                    _slide[0].classList.add('active');
+                    indexNum=0;
+                ">1</span>
+                <span class="" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    let cnt = 0;
+                    while(cnt<5){
+                        _span[cnt].classList.remove('active');
+                        _slide[cnt].classList.remove('active');
+                        cnt++;
+                    }
+                    _span[1].classList.add('active');
+                    _slide[1].classList.add('active');
+                    indexNum=1;
+                ">2</span>
+                <span class="" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    let cnt = 0;
+                    while(cnt<5){
+                        _span[cnt].classList.remove('active');
+                        _slide[cnt].classList.remove('active');
+                        cnt++;
+                    }
+                    _span[2].classList.add('active');
+                    _slide[2].classList.add('active');
+                    indexNum=2;
+                ">3</span>
+                <span class="" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    let cnt = 0;
+                    while(cnt<5){
+                        _span[cnt].classList.remove('active');
+                        _slide[cnt].classList.remove('active');
+                        cnt++;
+                    }
+                    _span[3].classList.add('active');
+                    _slide[3].classList.add('active');
+                    indexNum=3;
+                ">4</span>
+                <span class="" onclick="
+                    let _span = document.getElementsByTagName('span');
+                    let _slide = document.getElementsByClassName('slide');
+                    let cnt = 0;
+                    while(cnt<5){
+                        _span[cnt].classList.remove('active');
+                        _slide[cnt].classList.remove('active');
+                        cnt++;
+                    }
+                    _span[4].classList.add('active');
+                    _slide[4].classList.add('active');
+                    indexNum=4;
+                ">5</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let poLeft = 0;
+        let indexNum = 0;
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix::after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .wrap{
+            overflow: hidden;
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+        .slider{
+            width: 640px;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .slides{
+            position: relative;
+            width: 100%;
+            height: 360px;
+            overflow: hidden;
+        }
+        .slide{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 0;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        
+        .navigation{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform:translateY(-50%);
+
+            background-color: #f00;
+            z-index: 2;
+        }
+        .pager{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+
+            z-index: 2;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+
+        }
+        .pager span{
+            width: 20px;
+            height: 20px;
+            
+            margin: 0 10px;
+            border-radius: 50%;
+            background-color: #000;
+
+            text-indent: -99999px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .pager span:first-child{
+            background-color: #f00;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>slider</h1>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide slide01"><img src="./images/img01.jpg" alt="slide01"></div>
+                <div class="slide slide02"><img src="./images/img02.jpg" alt="slide02"></div>
+                <div class="slide slide03"><img src="./images/img03.jpg" alt="slide03"></div>
+                <div class="slide slide04"><img src="./images/img04.png" alt="slide04"></div>
+                <div class="slide slide05"><img src="./images/img05.jpg" alt="slide05"></div>
+            </div>
+            <div class="navigation">
+                <div class="prev">이전</div>
+                <div class="next">다음</div>
+            </div>
+            <div class="pager">
+                <span onclick="
+                    let _span = document.getElementsByTagName('span');
+
+                    let cnt = 0;
+                    while(cnt < 5){
+                        _span[cnt].style.backgroundColor = '#000';
+                        _slide[cnt].style.zIndex='0';
+                        _slide[cnt].style.opacity = '0';
+                        cnt++;
+                    }
+                    _span[0].style.backgroundColor = '#f00';
+                    _slide[0].style.zIndex= '1';
+                    _slide[0].style.opacity = '1';
+                ">1</span>
+                <span onclick="
+                    let _span = document.getElementsByTagName('span');
+
+                    let cnt = 0;
+                    while(cnt < 5){
+                        _span[cnt].style.backgroundColor = '#000';
+                        _slide[cnt].style.zIndex='0';
+                        _slide[cnt].style.opacity = '0';
+                        cnt++;
+                    }
+                    _span[1].style.backgroundColor = '#f00';
+                    _slide[1].style.zIndex= '1';
+                    _slide[1].style.opacity = '1';
+                ">2</span>
+                <span onclick="
+                    let _span = document.getElementsByTagName('span');
+
+                    let cnt = 0;
+                    while(cnt < 5){
+                        _span[cnt].style.backgroundColor = '#000';
+                        _slide[cnt].style.zIndex='0';
+                        _slide[cnt].style.opacity = '0';
+                        cnt++;
+                    }
+                    _span[2].style.backgroundColor = '#f00';
+                    _slide[2].style.zIndex= '1';
+                    _slide[2].style.opacity = '1';
+                ">3</span>
+                <span onclick="
+                    let _span = document.getElementsByTagName('span');
+
+                    let cnt = 0;
+                    while(cnt < 5){
+                        _span[cnt].style.backgroundColor = '#000';
+                        _slide[cnt].style.zIndex='0';
+                        _slide[cnt].style.opacity = '0';
+                        cnt++;
+                    }
+                    _span[3].style.backgroundColor = '#f00';
+                    _slide[3].style.zIndex= '1';
+                    _slide[3].style.opacity = '1';
+                ">4</span>
+                <span onclick="
+                    let _span = document.getElementsByTagName('span');
+
+                    let cnt = 0;
+                    while(cnt < 5){
+                        _span[cnt].style.backgroundColor = '#000';
+                        _slide[cnt].style.zIndex='0';
+                        _slide[cnt].style.opacity = '0';
+                        cnt++;
+                    }
+                    _span[4].style.backgroundColor = '#f00';
+                    _slide[4].style.zIndex= '1';
+                    _slide[4].style.opacity = '1';
+                ">5</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let _slide = document.getElementsByClassName('slide');
+        _slide[0].style.zIndex = '1';
+        _slide[0].style.opacity = '1';
+    </script>
+</body>
+</html>
