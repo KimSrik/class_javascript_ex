@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국어 성적 처리</title>
+
+
+    <script>
+        window.onload = function(){
+            let inData = document.getElementById('in-data');
+            let outInfo = document.getElementById('out-info');
+            let _btn = document.getElementById('btn');
+            
+
+            _btn.addEventListener('click', function(){
+                if(inData.value <= 100 && inData.value >= 0){
+                    if(inData.value >= 90){
+                        outInfo.value = 'A';
+                    }
+                    else if(inData.value >= 80){
+                        outInfo.value = 'B';
+                    }
+                    else if(inData.value >= 70){
+                        outInfo.value = 'C';
+                    }
+                    else if(inData.value >= 60){
+                        outInfo.value = 'D';
+                    }
+                    else if(inData.value < 60){
+                        outInfo.value = '재평가';
+                    }
+                }
+                else{
+                    alert('0 ~ 100 점수로 다시 확인하고 입력해주세요.');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <section class="sec input-data">
+            <label>국어점수 <input type="text" id="in-data"></label>
+            <br>
+            <button type="button" id="btn">처리</button>
+        </section>
+        <hr>
+        <section class="sec output-data">
+            <label>판정 <input type="text" id="out-info"> </label>
+        </section>
+    </div>
+    
+</body>
+</html>

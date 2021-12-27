@@ -70,7 +70,22 @@
                 let _bmi = document.getElementById('bmi');
                 let _result = document.getElementById('result');
                 _bmi.value = _kg.value / ((_cm.value/100) ** 2);
-                _result.value = _bmi.value >= 25 ? '비만' : _bmi.value >= 23 ? '과체중' : _bmi.value >= 18.5 ? '정상' : '저체중';
+                // _result.value = _bmi.value >= 25 ? '비만' : _bmi.value >= 23 ? '과체중' : _bmi.value >= 18.5 ? '정상' : '저체중';
+                if(_bmi.value >= 25){
+                    _result.value = '비만';
+                }
+                else if(_bmi.value >= 23){
+                    _result.value = '과체중';
+                }
+                else if(_bmi.value >= 18.5){
+                    _result.value = '정상';
+                }
+                else if(_bmi.value < 18.5){
+                    _result.value = '저체중';
+                }
+                else{
+                    alert('다시 입력해주세요.');
+                }
             ">
             
         </section>

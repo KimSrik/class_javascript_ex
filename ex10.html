@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let inputData = prompt('판별할 숫자를 입력하세요');
+            // alert(inputData);
+            if(inputData%2 == 0)
+                document.write('입력된 '+ inputData + '은 짝수입니다.');
+            
+            else if(inputData%2 == 1)
+                document.write('입력된 '+ inputData + '은 홀수입니다.');
+            else if(inputData == null)
+                document.write('다시 입력해주세요.');    
+            else
+                document.write('다시 입력해주세요.');
+
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

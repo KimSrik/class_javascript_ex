@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좋아하는 포털</title>
+</head>
+<body>
+    <input type="text" placeholder="좋아하는 포털이름" id="input">
+    <button type="button" id="btn">이동</button>
+
+    <script>
+        let _input = document.getElementById('input');
+        let _btn = document.getElementById('btn');
+
+        _btn.onclick = function(){
+
+            switch(_input.value){
+                case '네이버':
+                case 'naver':
+                    location.href = 'https://www.naver.com';
+                    break;
+            
+                case '구글':
+                case 'google':
+                    location.hred = 'https://www.google.com';
+                    break;
+
+                default:
+                    alert("해당 URL은 지원하지 않습니다.")
+                    _input.value = '';
+                    _input.focus();
+                    break;
+
+            
+            // if(_input.value == '네이버' || _input== 'naver'){
+            //     // location 브라우저 주소 객체부분
+            //     location.href = 'https://www.naver.com';
+            // }
+            // else if(_input.value == '구글' || _input== 'google'){
+            //     location.href = 'https://www.google.com';
+            // }
+            // else if(_input.value == '다음' || _input== 'daum'){
+            //     location.href = 'https://www.daum.net';
+            // }
+            
+            }
+        }
+    </script>
+</body>
+</html>
