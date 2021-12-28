@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string-change</title>
+</head>
+<body>
+    <label>성 : <input type="text"></label>
+    <br>
+    <label>이름 : <input type="text"></label>
+    <br>
+    <label>전화번호 : <input type="text"></label>
+    <br>
+    <label>전자우편 : <input type="text"></label>
+    <br>
+    <script>
+        let _input = document.getElementsByTagName('input');
+
+        let userName = prompt('여권이름(영문)을 입력해주세요.');
+        let userPhoneNumber = prompt('전화번호를 입력해주세요.');
+        let userEmail = prompt('E-Mail을 입력해주세요.');
+        
+
+        
+
+        //이름 처리 부분
+        let upperUserName ='';
+        // for(let cnt=0; cnt<userName.length; cnt++){
+        //     if(userName.charCodeAt(cnt)>=97 && userName.charCodeAt(cnt)<=122){
+        //         let ascCode = userName.charCodeAt(cnt);
+        //         upperUserName = upperUserName + String.fromCharCode(ascCode-32);
+        //         console.log(upperUserName);
+        //     }
+        //     else{
+        //         upperUserName = upperUserName + userName.charAt(cnt);
+        //     }
+        // }
+        userName = userName.toUpperCase();
+
+        let serName = userName.substring(0, userName.indexOf(' '));
+        let name = userName.substring(userName.indexOf(' ')+1, userName.length);
+        console.log(serName);
+        console.log(name);
+        console.log(userPhoneNumber);
+        console.log(userEmail);
+        _input[0].value = serName;
+        _input[1].value = name;
+
+
+        //전화번호 처리 부분 
+        let startIndex = userPhoneNumber.length-4;
+        let changeString = userPhoneNumber.substr(startIndex, 4);
+        _input[2].value = userPhoneNumber.replace(changeString,'****');
+
+        //E-mail 처리부분
+        if(userEmail.indexOf('@')>=4 && userEmail.indexOf('.')>userEmail.indexOf('@')){
+            _input[3].value = userEmail;
+        }
+        else{
+            userEmail = prompt('E-Mail을 입력해주세요.');
+        }
+        
+        
+
+        
+        
+        
+    </script>
+</body>
+</html>
