@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지연실행</title>
+    <style>
+        .div{
+            width: 100vw;
+            height: 70vh;
+            display: flex;
+            background-color: #f00;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div" id="div"></div>
+    <button id="btn1">카운트 멈춤</button>
+    <button id="btn2">색상변형 안함</button>
+
+    <script>
+        let box = document.getElementById('div');
+        let cnt = 10;
+        
+
+
+        box.innerHTML = cnt;
+
+        let setLoop = setInterval(function(){
+            box.innerHTML = --cnt;
+        },1000);
+
+        let delayOne = setTimeout(function(){
+            box.style.backgroundColor = '#000';
+            box.style.color = '#fff';
+        },11000);
+
+        let _btn1 = document.getElementById('btn1');
+        let _btn2 = document.getElementById('btn2');
+
+        _btn1.addEventListener('click', function(){
+            clearInterval(setLoop);
+        })
+
+        _btn2.onclick = function(){
+            clearTimeout(delayOne);
+        }
+
+        // box.style.backgroundColor = 'black';
+
+
+    </script>
+</body>
+</html>
