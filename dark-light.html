@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다크 라이트</title>
+    <style>
+        body.dark{
+            background-color: #000;
+        }
+        h1.dark, h2.dark{
+            color:#fff;
+        }
+        p.dark, a.dark{
+            color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>web</h1>
+    <ul>
+        <li><a href="#">web</a></li>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+    </ul>
+    <hr>
+    <h2>web</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt rem fugit dolorem animi, sed quas ad accusantium doloremque maxime. At commodi placeat a perferendis! Quod temporibus unde hic dolorum numquam?
+        Officiis quas voluptas tempore vel laborum in numquam voluptatum provident deleniti voluptate quam tenetur incidunt sapiente id molestiae quidem dolore ad, ullam, mollitia, suscipit fugiat? Quia nihil ratione accusamus aliquid.
+        Eum laudantium molestiae reiciendis quidem fugiat rem alias, ab veniam deleniti quae natus illo ipsam inventore illum reprehenderit aliquid nisi eos impedit? Nulla minima exercitationem, culpa porro doloribus quo animi.
+        Nisi et, eaque exercitationem molestiae laudantium dicta quo numquam molestias deleniti temporibus quae. Rem inventore tempore laborum, doloribus quia molestias, temporibus voluptates, consequuntur debitis illum soluta sit modi excepturi dolor?
+        Soluta doloremque ut, iure adipisci eaque corporis. Natus fugit distinctio hic illo corporis quasi odio voluptas assumenda itaque sequi? Tempora ipsa pariatur voluptate placeat, repellendus vero laboriosam sit blanditiis nemo!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quis doloremque quas architecto dolor excepturi vero voluptatibus quibusdam et, non deserunt in adipisci distinctio nemo ipsam id aspernatur unde explicabo?
+        Iusto, voluptas delectus cumque facilis quidem quas expedita. Quos nulla numquam libero alias officia ratione exercitationem autem magni, suscipit perferendis aut nobis pariatur qui saepe quae sit facilis? Consectetur, enim!
+        Consectetur saepe quam libero nulla velit inventore? Fuga sequi obcaecati voluptates pariatur provident sunt nobis ratione consequuntur expedita corporis! Id doloribus ea iusto aut adipisci quis consequuntur? Beatae, aut ad.
+    </p>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, consequatur? Natus rem molestiae nostrum veniam soluta magnam modi alias est sapiente ullam dolorum dolores, inventore expedita aperiam error laborum culpa.
+        Hic enim quam rem dolorum, voluptatibus, at ad nihil molestiae corporis iusto commodi aperiam incidunt! Ad voluptatum voluptas, facilis nesciunt quo architecto. Repudiandae, illo. Nihil aliquam placeat numquam. Saepe, eveniet?
+        Exercitationem aliquid neque at itaque quas necessitatibus earum consequuntur doloribus ab aliquam eveniet expedita, quibusdam nisi commodi nam quo. Explicabo itaque, atque accusamus velit excepturi illo? Molestiae laudantium dolore doloremque?
+        Ab voluptatum et eaque soluta temporibus veritatis dolores dolorum, quasi mollitia id, minus porro perspiciatis illo explicabo tempora officia ratione inventore. Eius placeat debitis facere, perferendis ducimus quod voluptate. Hic.
+        Odio minima deserunt perspiciatis excepturi aut, explicabo molestias sit sapiente voluptatem illo dolore? Eius veritatis nulla fuga placeat. Dolores accusamus assumenda tenetur dicta vel nemo eius, repellendus suscipit quam quaerat?
+        Tenetur nobis blanditiis consectetur obcaecati repellat libero quae perferendis aut, tempore soluta qui fuga, non maxime doloribus cumque consequuntur veniam? Temporibus ipsum et tenetur eius exercitationem! Voluptatibus cupiditate nihil veritatis.
+    </p>
+    <button class="dark" id="dark">다크모드</button>
+    <button class="light" id="light">라이트모드</button>
+
+    <script>
+        // 트리거
+        let btnDark = document.getElementById('dark');
+        let btnLight = document.getElementById('light');
+
+        let _body = document.body;
+        let _h1 = document.querySelector('h1');
+        let _aNode = document.getElementsByTagName('a');
+        let _h2 = document.querySelector('h2');
+        let _pNode = document.getElementsByTagName('p');
+
+        btnDark.onclick = function(){
+            _body.classList.add('dark');
+            _h1.classList.add('dark');
+            _h2.classList.add('dark');
+            for(let idx=0; idx<_aNode.length; idx++){
+                _aNode[idx].classList.add('dark');
+            }
+
+            for(let idx=0; idx<_pNode.length; idx++){
+                _pNode[idx].classList.add('dark');
+            }
+            // _body.style.backgroundColor = '#000';
+            // _h1.style.color = '#fff';
+
+            // for(let idx=0; idx<_aNode.length; idx++){
+            //     _aNode[idx].style.color='lightblue';
+            // }
+
+            // _h2.style.color='#fff';
+
+            // for(let idx=0; idx<_pNode.length; idx++){
+            //     _pNode[idx].style.color='lightblue';
+            // }
+        }
+
+        btnLight.addEventListener('click', function(){
+            _body.classList.remove('dark');
+            _h1.classList.remove('dark');
+            _h2.classList.remove('dark');
+            for(let idx=0; idx<_aNode.length; idx++){
+                _aNode[idx].classList.remove('dark');
+            }
+
+            for(let idx=0; idx<_pNode.length; idx++){
+                _pNode[idx].classList.remove('dark');
+            }
+            // _body.style.backgroundColor = '#fff';
+            // _h1.style.color = '#000';
+
+            // for(let idx=0; idx<_aNode.length; idx++){
+            //     _aNode[idx].style.color='blue';
+            // }
+
+            // _h2.style.color='#000';
+
+            // for(let idx=0; idx<_pNode.length; idx++){
+            //     _pNode[idx].style.color='black';
+            // }
+        })
+    </script>
+</body>
+</html>
