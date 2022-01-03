@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB</title>
+    <style>
+        :root{
+            font-size: 32px;
+        }
+        h1{
+            font-size: 64px;
+            text-align: center;
+        }
+        h1 a{
+            color : darkblue;
+        }
+        button {
+            font-size : inherit;
+        }
+        ul,ol,li{
+            list-style: none;
+        }
+        ul a{
+            font-size: 42px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1><a href="./index.html">WEB</a></h1>
+    <button id="btn">NIGHT</button>
+
+    <!-- <button onclick="
+        inText(this);
+        bodyBgColor('#fff');
+        aTagColor('darkblue');
+        buttonColor('1px outset rgb(118, 118, 118)', '#fff', '#000');
+        h2Color('#000');
+        pTagColor('#000');
+    ">DAY</button> -->
+    <ul>
+        <li><a href="#" onclick="return false;">HTML</a></li>
+        <li><a href="#" onclick="return false;">CSS</a></li>
+        <li><a href="#" onclick="return false;">javaScript</a></li>
+    </ul>
+    <hr>
+    <h2>web이란 무엇인가?</h2>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, nihil pariatur sint voluptatum adipisci placeat a numquam repudiandae itaque veniam corrupti quam possimus blanditiis excepturi impedit ducimus aliquam? Aliquam, molestiae.
+        Molestias modi culpa amet voluptate hic cum obcaecati delectus nemo sed? Labore magnam maiores similique, vel excepturi eaque maxime quas, suscipit beatae tenetur dolore natus! Ipsa consequatur facilis totam exercitationem.
+    </p>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus eius totam at rerum fugiat, distinctio eos, nisi a sit nesciunt et maxime quidem placeat ab quasi, impedit adipisci quae labore?
+    </p>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam eos deserunt minima omnis in rerum tempora aperiam laboriosam nesciunt enim itaque vitae, ut dolor? Neque officiis fugiat corporis. Alias, minima!
+        Cum modi officiis, accusantium quod et distinctio atque fuga deleniti eum suscipit repudiandae odio aspernatur ex nemo quia repellendus fugiat vitae dolorem officia. Ratione quaerat mollitia cumque corrupti, voluptatum sequi!
+        Cupiditate est inventore omnis eos accusamus placeat, sequi obcaecati temporibus culpa, ipsam rerum excepturi alias cum praesentium! Saepe, autem animi veniam ex incidunt dolorem, error alias amet magnam quia ab?
+    </p>
+
+    <script>
+
+        let trigger = document.getElementById('btn');
+        trigger.onclick = function(){
+            inText(this);
+        }
+
+        function inText(self){
+            if(self.innerHTML == 'NIGHT'){
+            // 야간 화면
+                self.innerHTML = 'DAY';
+                bodyBgColor('#000');
+                aTagColor('lightblue');
+                buttonColor('2px solid #fff', '#000', '#fff');
+                h2Color('#fff');
+                pTagColor('#fff');
+            }else if(self.innerHTML == 'DAY'){
+            // 주간 화면
+                self.innerHTML = 'NIGHT';
+                bodyBgColor('#fff');
+                aTagColor('darkblue');
+                buttonColor('1px outset #767676', '#efefef', '#000');
+                h2Color('#000');
+                pTagColor('#000');
+            }
+            console.log(self.innerHTML);
+        }
+        // 본문 배경 변경
+        function bodyBgColor(color){
+            let eleBody = document.body;
+            eleBody.style.backgroundColor = color;
+        }
+        // 하이퍼링크 스타일 변경
+        function aTagColor(color){
+            let aTag = document.getElementsByTagName('a');
+            for(let idx=0; idx<aTag.length; idx++){
+                aTag[idx].style.color = color;
+            }
+        }
+        // 버튼 스타일 변경
+        function buttonColor(border, bgColor, color){
+            let btnTag = document.getElementsByTagName('button');
+            for(let idx=0; idx<btnTag.length; idx++){
+                btnTag[idx].style.border = border;
+                btnTag[idx].style.backgroundColor = bgColor;
+                btnTag[idx].style.color = color;
+            }
+        }
+        // 서브타이틀 변경
+        function h2Color(color){
+            let h2Tag = document.getElementsByTagName('h2');
+            h2Tag[0].style.color = color;
+        }
+        // 본문 변경
+        function pTagColor(color){
+            let pTag = document.getElementsByTagName('p');
+            for(let idx=0; idx<pTag.length; idx++){
+                pTag[idx].style.color = color;
+            }
+        }
+
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입(prototype)</title>
+</head>
+<body>
+    <button id="btn01">1</button>
+    <button id="btn02">2</button>
+    <button id="btn03">3</button>
+
+    <script>
+         function CheckBox(name, width, height){
+            this.userName = name;
+            this.boxWidth = width;
+            this.boxHeight = height;
+        }
+        // 프로토 타입은 앞의 함수를 공유한다.
+
+        // 메모리 사용이 매우 적기 때문에 (효율이 좋음)
+        // 기존 함수에 추가하지말고 프로토타입을 활용하면 좋다.
+        CheckBox.prototype.getInfo = function(){
+            let str = '';
+            str += '이름 : ' + this.userName + ', ';
+            str += '너비 : ' + this.boxWidth + ', ';
+            str += '높이 : ' + this.boxHeight;
+            return str;
+        }
+        
+        let hong = new CheckBox('홍길동', 100, 100);
+        let kim = new CheckBox('김기리', 200, 200);
+
+
+        console.log(hong.userName);
+        console.log(hong.boxWidth);
+        console.log(hong.boxHeight);
+        console.log(hong.getInfo());
+
+        
+    </script>
+</body>
+</html>

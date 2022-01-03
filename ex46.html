@@ -34,8 +34,29 @@
                 str += '이름 : ' + this.userName + ',';
                 str += '너비 : ' + this.boxWidth + ',';
                 str += '높이 : ' + this.boxHeight;
+                return str;
+            };
+        }
+    
+        let hong = new CheckBox('홍길동', 100, 100);
+        let kim = new CheckBox('김기리', 200, 200);
+
+
+        console.log(hong.userName);
+        console.log(hong.boxWidth);
+        console.log(hong.boxHeight);
+        console.log(hong.getInfo());
+
+        let hong2 = {
+            userName = '홍길동',
+            boxWidth = 100,
+            boxHeight = 100,
+            getInfo = function(){
+                this.userName + this.boxWidth + this.boxHeight;
             }
         }
+
+    
     </script>
 </body>
 </html>
