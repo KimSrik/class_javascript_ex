@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 만들기</title>
+</head>
+<body>
+    <script>
+
+        function add(a,b){
+            console.log(a+b);
+        }
+        let sub = function(a,b){
+            console.log(a-b);
+        }
+
+        function mul(a,b){
+            console.log(a*b);
+        }
+        
+        // arrow function, 화살표 함수
+        // function 대신 화살표로 표기 할 수 있다.
+        let div = (a,b)=>{
+            console.log(a/b)
+        }
+
+
+        add(10,5);
+        sub(6,3);
+        mul();
+        div();
+
+
+        // function 함수명(인수, 인수, 인수, ...){
+        //     코드
+        // }
+
+        // let 함수명 = function(인수, 인수, 인수, ...){
+
+        // }
+    </script>
+</body>
+</html>

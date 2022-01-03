@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    <script>
+        
+        
+
+        // 아규먼트(argument) : 매개변수 갯수와 넘겨받는 인수 갯수가 다를때 사용[배열]
+        // 덧셈
+        function add(){
+            let result = 0;
+            // console.log(arguments.length);
+            for(let idx=0; idx<arguments.length; idx++){
+                result += arguments[idx];
+            }
+            return result;
+
+            // console.log('모든수의 합계 : ' + total);
+        }
+        // javascript에서 함수는 호출을 먼저 한 뒤에 정의를 해도 실행이 된다.(호이스팅)
+
+        // 뺄셈
+        // 계산식 오류 주의
+        function sub(){
+            let result = arguments[0];
+            for(let idx=1; idx<arguments.length; idx++){
+                result -= arguments[idx];
+            }
+            return result;
+            // console.log('모든수의 차이 : ' + result);
+        }
+
+        // 곱셈
+        let mul = function(){
+            let result = 1;
+            for(let idx=0; idx<arguments.length; idx++){
+                result *= arguments[idx];
+            }
+            return result;
+            // console.log('모든수의 곱 : ' + result);
+        }
+
+        // 나누기
+        // 화살표 함수는 아규먼트를 쓸 수 없다.
+        let div = function(){
+            let result = arguments[0];
+            for(let idx=1; idx<arguments.length; idx++){
+                result /= arguments[idx];
+            }
+            return result;
+            // console.log('모든수의 나누기 : ' + result);
+        }
+
+    </script>
+</body>
+</html>

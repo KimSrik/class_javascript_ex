@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기명함수</title>
+</head>
+<body>
+    <script>
+        // 기명함수
+        function fn01(){
+            console.log('기명함수');
+        }
+
+        //익명함수
+        let fn02 = function(){
+            console.log('익명함수');
+        }
+
+        let obj = {
+            fn03:fn01
+        }
+
+        function fn05(){
+            fn01();
+        }
+
+        // 참조
+        let fn04 = fn02;
+
+        // 함수의 콜은 저장 시킬수가 없다.
+
+        
+        
+
+
+
+        
+    </script>
+    
+</body>
+</html>
